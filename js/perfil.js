@@ -22,20 +22,8 @@
     document.getElementById('perfilMemorias').textContent = dados.jogosMemoriaConcluidos;
     document.getElementById('perfilProgresso').textContent = app.calcularProgressoGeral() + '%';
 
-    mostrarImagemXP(app, dados.xpNivel);
+    // Não exibe mais imagem de XP a partir de arquivo externo.
     mostrarConquistas(app);
-  }
-
-  function mostrarImagemXP(app, xpNivel) {
-    const area = document.getElementById('imagemXP');
-    area.innerHTML = '';
-    area.appendChild(
-      app.criarImagem(
-        app.obterImagemXP(xpNivel),
-        'Imagem de progresso de XP',
-        'imagem-progresso-xp'
-      )
-    );
   }
 
   function mostrarConquistas(app) {

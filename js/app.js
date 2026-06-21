@@ -15,7 +15,7 @@
     caminho,
     embaralhar,
     mostrarAviso,
-    obterImagemXP
+    
   };
 
   window.LibrasApp = LibrasApp;
@@ -102,19 +102,6 @@
       <header class="topo topo-site">
         <div class="container">
           <div class="linha-topo topo-linha">
-            <a class="marca" href="${caminho('index.html')}" aria-label="Ir para o início">
-              <div class="marca-icone" aria-hidden="true">L</div>
-              <div>
-                <h1>LibrasPlay</h1>
-                <p>Aprenda Libras brincando</p>
-              </div>
-            </a>
-
-            <div class="acessibilidade" aria-label="Botões de acessibilidade">
-              <button class="botao-acessibilidade" data-acao="fonte-mais" type="button" aria-label="Aumentar fonte">A+</button>
-              <button class="botao-acessibilidade" data-acao="fonte-menos" type="button" aria-label="Diminuir fonte">A-</button>
-              <button class="botao-acessibilidade" data-acao="modo-escuro" type="button" aria-label="Ativar ou desativar modo escuro">🌙 Modo escuro</button>
-            </div>
           </div>
 
           <nav class="menu menu-principal" aria-label="Menu principal">
@@ -122,8 +109,13 @@
             ${linkMenu('alfabeto', '📚 Alfabeto', caminho('paginas/alfabeto.html'), paginaAtual)}
             ${linkMenu('quiz', '❓ Quiz', caminho('paginas/quiz.html'), paginaAtual)}
             ${linkMenu('memoria', '🧠 Memória', caminho('paginas/memoria.html'), paginaAtual)}
-            ${linkMenu('perfil', '👤 Perfil', caminho('paginas/perfil.html'), paginaAtual)}
             ${linkMenu('sobre', 'ℹ Informações', caminho('paginas/sobre.html'), paginaAtual)}
+            <div class="acessibilidade" aria-label="Botões de acessibilidade">
+              <button class="botao-acessibilidade" data-acao="fonte-mais" type="button" aria-label="Aumentar fonte">A+</button>
+              <button class="botao-acessibilidade" data-acao="fonte-menos" type="button" aria-label="Diminuir fonte">A-</button>
+              <button class="botao-acessibilidade" data-acao="modo-escuro" type="button" aria-label="Ativar ou desativar modo escuro">🌙</button>
+              <a class="botao neutro botao-perfil" href="${caminho('paginas/perfil.html')}" aria-label="Perfil">👤</a>
+            </div>
           </nav>
         </div>
       </header>
@@ -230,11 +222,6 @@
       xpNivel: dados.xpNivel,
       nivel: dados.nivel
     };
-  }
-
-  function obterImagemXP(xpNivel) {
-    const valor = Math.max(10, Math.min(100, Math.ceil(xpNivel / 10) * 10));
-    return caminho('imagens/xp/xp' + valor + '.jpeg');
   }
 
   function calcularConquistas() {

@@ -12,7 +12,7 @@
     if ((document.body.dataset.page || '') !== 'memoria') return;
 
     const app = window.LibrasApp;
-    const quantidadePares = 6;
+    // quantidadePares now definida pelo seletor de cartas (total de cartas / 2)
     const pontosPorPar = 10;
     const xpPorPar = 5;
 
@@ -29,12 +29,17 @@
     const feedback = document.getElementById('feedbackMemoria');
     const resultado = document.getElementById('resultadoMemoria');
     const btnReiniciar = document.getElementById('btnReiniciarMemoria');
+    const seletorCartas = document.getElementById('seletorCartas');
 
     btnReiniciar.addEventListener('click', novoJogo);
+    seletorCartas?.addEventListener('change', novoJogo);
 
+    // iniciar com valor padrão do seletor
     novoJogo();
 
     function novoJogo() {
+      const totalCartas = seletorCartas ? parseInt(seletorCartas.value, 10) : 6;
+      const quantidadePares = Math.max(1, Math.min(26, Math.floor(totalCartas / 2)));
       const letrasEscolhidas = app.embaralhar(app.letras).slice(0, quantidadePares);
 
       cartas = [];

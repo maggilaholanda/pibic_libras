@@ -8,7 +8,7 @@
   --verde: #2ECC71;
   --vermelho: #FF6B6B;
   --roxo: #9B59B6;
-  --fundo: #F8FAFC;
+  --fundo: #B8CAD4;
   --cartao: #FFFFFF;
   --texto: #2D3436;
   --texto-suave: #636E72;
@@ -115,15 +115,8 @@ body.modo-escuro .topo-site {
 }
 
 .marca-icone {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: var(--azul);
-  color: #fff;
-  font-weight: 800;
-  font-size: 1rem;
+  /* removida: estilo da logo 'L' não é mais necessário */
+  display: none !important;
 }
 
 .menu {
@@ -207,6 +200,18 @@ body.modo-escuro .topo-site {
   gap: 8px;
   flex-wrap: wrap;
   padding: 0 0 14px;
+}
+
+.menu-principal .acessibilidade {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-principal .botao-acessibilidade {
+  min-height: 36px;
+  padding: 8px 10px;
 }
 
 .menu-principal a {
