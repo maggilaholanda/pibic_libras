@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libras Kids - Início</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body data-page="inicio" data-base-path="">
+  <!-- Cabeçalho e menu são montados pelo JavaScript para evitar repetição. -->
+  <div id="cabecalho"></div>
+
+  <main class="container conteudo-principal">
+    <section class="hero cartao destaque">
+      <div>
+        <p class="etiqueta">Aprenda brincando</p>
+        <h1>Aplicação educativa de Libras</h1>
+        <p>
+          Explore o alfabeto em Libras, pratique com quiz, jogue memória e acompanhe seu progresso.
+        </p>
+        <div class="linha-botoes">
+          <a class="botao primario" href="paginas/alfabeto.html">Começar pelo alfabeto</a>
+          <a class="botao secundario" href="paginas/quiz.html">Ir para o quiz</a>
+        </div>
+      </div>
+      <div class="painel-xp" aria-label="Resumo de progresso">
+        <strong id="resumoNivel">Nível 1</strong>
+        <p id="resumoXPNivel">0/100 XP</p>
+        <div class="barra" aria-label="Barra de experiência">
+          <span id="barraXPInicio" style="width: 0%;"></span>
+        </div>
+        <p id="resumoXP">XP total. 0</p>
+      </div>
+    </section>
+
+    <section class="grade-menu" aria-label="Menu principal de módulos">
+      <a class="cartao menu-card" href="paginas/alfabeto.html">
+        <img src="imagens/icones/livro.png" alt="Ícone de livro">
+        <span>📚 Aprender Alfabeto</span>
+        <small>Veja os sinais das letras A até Z.</small>
+      </a>
+
+      <a class="cartao menu-card" href="paginas/quiz.html">
+        <img src="imagens/icones/quiz.png" alt="Ícone de quiz">
+        <span>❓ Quiz</span>
+        <small>Responda perguntas e ganhe XP.</small>
+      </a>
+
+      <a class="cartao menu-card" href="paginas/memoria.html">
+        <img src="imagens/icones/memoria.png" alt="Ícone de jogo da memória">
+        <span>🧠 Jogo da Memória</span>
+        <small>Combine o sinal com a letra correta.</small>
+      </a>
+
+      <a class="cartao menu-card" href="paginas/perfil.html">
+        <img src="imagens/icones/estrela.png" alt="Ícone de estrela">
+        <span>👤 Perfil</span>
+        <small>Acompanhe nível, XP e conquistas.</small>
+      </a>
+
+      <a class="cartao menu-card" href="paginas/historia.html">
+        <img src="imagens/icones/informacoes.png" alt="Ícone de informações">
+        <span>📖 História da Libras</span>
+        <small>Conheça a origem e a importância da Libras.</small>
+      </a>
+
+      <a class="cartao menu-card" href="paginas/sobre.html">
+        <img src="imagens/icones/informacoes.png" alt="Ícone de informações">
+        <span>ℹ Sobre Libras</span>
+        <small>Entenda os benefícios da comunicação inclusiva.</small>
+      </a>
+    </section>
+
+    <section class="cartao">
+      <h2>Palavras e frases</h2>
+      <p>
+        Esta é uma seção informativa para expansão futura. Neste momento, ela não possui quiz.
+      </p>
+      <div class="duas-colunas">
+        <div>
+          <h3>Palavras básicas</h3>
+          <ul class="lista-suave">
+            <li>Olá</li>
+            <li>Bom dia</li>
+            <li>Boa tarde</li>
+            <li>Boa noite</li>
+            <li>Obrigado</li>
+            <li>Por favor</li>
+            <li>Desculpe</li>
+            <li>Sim</li>
+            <li>Não</li>
+            <li>Tudo bem?</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Frases simples</h3>
+          <ul class="lista-suave">
+            <li>Qual é seu nome?</li>
+            <li>Meu nome é...</li>
+            <li>Como você está?</li>
+            <li>Até logo.</li>
+            <li>Bom trabalho.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

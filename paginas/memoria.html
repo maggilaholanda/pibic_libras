@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libras Kids - Jogo da Memória</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body data-page="memoria" data-base-path="../">
+  <div id="cabecalho"></div>
+
+  <main class="container conteudo-principal">
+    <section class="pagina-titulo">
+      <p class="etiqueta">Jogo educativo</p>
+      <h1>🧠 Jogo da Memória</h1>
+      <p>Encontre os pares: imagem do sinal e letra correspondente.</p>
+    </section>
+
+    <section class="cartao">
+      <div class="topo-modulo">
+        <span id="pontosMemoria">Pontos: 0</span>
+        <span id="tentativasMemoria">Tentativas: 0</span>
+      </div>
+
+      <div id="tabuleiroMemoria" class="tabuleiro-memoria" aria-label="Cartas do jogo da memória"></div>
+
+      <div id="feedbackMemoria" class="feedback" aria-live="polite"></div>
+
+      <div class="linha-botoes centralizada">
+        <button class="botao primario" id="btnReiniciarMemoria">Reiniciar jogo</button>
+        <a class="botao neutro" href="../index.html">Voltar ao menu</a>
+      </div>
+    </section>
+
+    <section class="cartao resultado oculto" id="resultadoMemoria" aria-live="polite"></section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/memoria.js"></script>
+</body>
+</html>

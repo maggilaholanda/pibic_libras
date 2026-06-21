@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libras Kids - Alfabeto</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body data-page="alfabeto" data-base-path="../">
+  <div id="cabecalho"></div>
+
+  <main class="container conteudo-principal">
+    <section class="pagina-titulo">
+      <p class="etiqueta">Módulo de aprendizagem</p>
+      <h1>📚 Aprender Alfabeto em Libras</h1>
+      <p>Use os botões para navegar pelas letras e observe o sinal correspondente.</p>
+    </section>
+
+    <section class="cartao modulo-centralizado">
+      <h2 id="letraAtual">Letra A</h2>
+      <div id="imagemLetra" class="imagem-sinal-grande" aria-live="polite"></div>
+
+      <div class="linha-botoes centralizada">
+        <button class="botao secundario" id="btnAnterior">Anterior</button>
+        <button class="botao primario" id="btnProxima">Próxima</button>
+      </div>
+
+      <div class="linha-botoes centralizada">
+        <a class="botao sucesso" href="quiz.html">Iniciar Quiz</a>
+        <a class="botao neutro" href="../index.html">Voltar ao menu</a>
+      </div>
+    </section>
+
+    <section class="cartao">
+      <h2>Letras A até Z</h2>
+      <p>Clique em uma letra para visualizar o sinal.</p>
+      <div id="gradeLetras" class="grade-letras" aria-label="Lista de letras do alfabeto"></div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/alfabeto.js"></script>
+</body>
+</html>

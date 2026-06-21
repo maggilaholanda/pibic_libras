@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libras Kids - Quiz</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body data-page="quiz" data-base-path="../">
+  <div id="cabecalho"></div>
+
+  <main class="container conteudo-principal">
+    <section class="pagina-titulo">
+      <p class="etiqueta">Prática</p>
+      <h1>❓ Quiz de Libras</h1>
+      <p>Observe o sinal e escolha a letra correta.</p>
+    </section>
+
+    <section class="cartao modulo-centralizado" id="quizArea">
+      <div class="topo-modulo">
+        <span id="contadorPergunta">Pergunta 1 de 10</span>
+        <span id="placarQuiz">Acertos: 0</span>
+      </div>
+
+      <h2>Qual é esta letra?</h2>
+      <div id="imagemQuiz" class="imagem-sinal-grande" aria-live="polite"></div>
+      <div id="alternativasQuiz" class="alternativas" aria-label="Alternativas do quiz"></div>
+      <div id="feedbackQuiz" class="feedback" aria-live="polite"></div>
+
+      <div class="linha-botoes centralizada">
+        <button class="botao primario" id="btnProximaPergunta">Próxima pergunta</button>
+        <a class="botao neutro" href="../index.html">Voltar ao menu</a>
+      </div>
+    </section>
+
+    <section class="cartao resultado oculto" id="resultadoQuiz" aria-live="polite"></section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libras Kids - Perfil</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body data-page="perfil" data-base-path="../">
+  <div id="cabecalho"></div>
+
+  <main class="container conteudo-principal">
+    <section class="pagina-titulo">
+      <p class="etiqueta">Acompanhamento</p>
+      <h1>👤 Perfil do aluno</h1>
+      <p>Veja seu XP, nível, progresso e conquistas salvas no navegador.</p>
+    </section>
+
+    <section class="grade-perfil">
+      <div class="cartao painel-perfil">
+        <h2>Nível atual</h2>
+        <strong id="perfilNivel" class="numero-destaque">1</strong>
+        <p id="perfilXP">0 XP total</p>
+        <div class="barra grande" aria-label="Barra de XP do nível atual">
+          <span id="perfilBarraXP" style="width: 0%;"></span>
+        </div>
+        <p id="perfilXPNivel">0/100 XP neste nível</p>
+        <div id="imagemXP" class="imagem-xp"></div>
+      </div>
+
+      <div class="cartao painel-perfil">
+        <h2>Resumo</h2>
+        <ul class="lista-resumo">
+          <li><strong id="perfilQuizzes">0</strong> quizzes concluídos</li>
+          <li><strong id="perfilMemorias">0</strong> jogos da memória concluídos</li>
+          <li><strong id="perfilProgresso">0%</strong> de progresso geral</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cartao">
+      <h2>Conquistas</h2>
+      <p>As conquistas aparecem conforme você pratica.</p>
+      <div id="listaConquistas" class="grade-conquistas"></div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/perfil.js"></script>
+</body>
+</html>
