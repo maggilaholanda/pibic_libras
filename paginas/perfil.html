@@ -12,8 +12,16 @@
   <main class="container conteudo-principal">
     <section class="pagina-titulo">
       <p class="etiqueta">Acompanhamento</p>
-      <h1>👤 Perfil do aluno</h1>
+      <h1>Perfil do aluno</h1>
       <p>Veja seu XP, nível, progresso e conquistas salvas no navegador.</p>
+      <div class="perfil-nome">
+        <label for="nomePerfil">Nome da pessoa</label>
+        <div class="perfil-nome-controle">
+          <input id="nomePerfil" type="text" maxlength="40" placeholder="Digite seu nome">
+          <button class="botao sucesso" id="btnSalvarNome" type="button">Salvar nome</button>
+        </div>
+        <p id="feedbackNome" class="feedback" aria-live="polite"></p>
+      </div>
     </section>
 
     <section class="grade-perfil">

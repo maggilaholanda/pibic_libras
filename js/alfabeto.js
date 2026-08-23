@@ -20,6 +20,7 @@
     const gradeLetras = document.getElementById('gradeLetras');
     const btnAnterior = document.getElementById('btnAnterior');
     const btnProxima = document.getElementById('btnProxima');
+    const btnReiniciar = document.getElementById('btnReiniciarAlfabeto');
 
     montarGradeLetras();
     mostrarLetra(indiceAtual);
@@ -31,6 +32,11 @@
 
     btnProxima.addEventListener('click', function () {
       indiceAtual = indiceAtual === letras.length - 1 ? 0 : indiceAtual + 1;
+      mostrarLetra(indiceAtual);
+    });
+
+    btnReiniciar.addEventListener('click', function () {
+      indiceAtual = 0;
       mostrarLetra(indiceAtual);
     });
 

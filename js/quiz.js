@@ -26,10 +26,12 @@
     const alternativasQuiz = document.getElementById('alternativasQuiz');
     const feedbackQuiz = document.getElementById('feedbackQuiz');
     const btnProxima = document.getElementById('btnProximaPergunta');
+    const btnReiniciarTopo = document.getElementById('btnReiniciarQuizTopo');
     const quizArea = document.getElementById('quizArea');
     const resultadoQuiz = document.getElementById('resultadoQuiz');
 
     btnProxima.addEventListener('click', proximaPergunta);
+    btnReiniciarTopo.addEventListener('click', criarNovoQuiz);
 
     criarNovoQuiz();
 
@@ -163,7 +165,6 @@
         <p>Você acertou <strong>${acertos}</strong> de <strong>${totalPerguntas}</strong> perguntas.</p>
         <div class="linha-botoes centralizada">
           <button class="botao primario" id="tentarNovamente" type="button">Tentar novamente</button>
-          <a class="botao neutro" href="../index.html">Voltar ao menu</a>
         </div>
       `;
 

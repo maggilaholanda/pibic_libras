@@ -29,6 +29,7 @@
 
   function progressoPadrao() {
     return {
+      nome: '',
       xpTotal: 0,
       xpNivel: 0,
       nivel: 1,
@@ -54,7 +55,22 @@
     }
 
     try {
-      return Object.assign(progressoPadrao(), JSON.parse(salvo));
+      const salvoParseado = JSON.parse(salvo);
+      const dados = Object.assign(progressoPadrao(), salvoParseado);
+      const configuracoesSalvas = salvoParseado && typeof salvoParseado.configuracoes === 'object'
+        ? salvoParseado.configuracoes
+        : {};
+
+      dados.configuracoes = Object.assign(
+        progressoPadrao().configuracoes,
+        configuracoesSalvas
+      );
+
+      if (!Array.isArray(dados.alfabetoVisto)) {
+        dados.alfabetoVisto = [];
+      }
+
+      return dados;
     } catch (erro) {
       console.warn('Não foi possível ler o progresso salvo. Um novo progresso será criado.', erro);
       return progressoPadrao();

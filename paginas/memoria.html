@@ -12,13 +12,17 @@
   <main class="container conteudo-principal">
     <section class="pagina-titulo">
       <p class="etiqueta">Jogo educativo</p>
-      <h1>🧠 Jogo da Memória</h1>
+      <h1>Jogo da Memória</h1>
       <p>Encontre os pares: imagem do sinal e letra correspondente.</p>
+      <div class="acoes-modulo" aria-label="Ações da memória">
+        <button class="botao botao-reiniciar" id="btnReiniciarMemoriaTopo" type="button">Reiniciar</button>
+        <a class="botao menu-principal-botao" href="../index.html">Voltar ao menu</a>
+      </div>
     </section>
 
     <section class="cartao">
       <div class="topo-modulo">
-        <div>
+        <div class="controle-jogo">
           <label for="seletorCartas">Tamanho do jogo:</label>
           <select id="seletorCartas" aria-label="Tamanho do jogo">
             <!-- total de cartas: 6 (3 pares), 8 (4 pares) ... até 52 (26 pares) -->
@@ -56,10 +60,6 @@
 
       <div id="feedbackMemoria" class="feedback" aria-live="polite"></div>
 
-      <div class="linha-botoes centralizada">
-        <button class="botao primario" id="btnReiniciarMemoria">Reiniciar jogo</button>
-        <a class="botao neutro" href="../index.html">Voltar ao menu</a>
-      </div>
     </section>
 
     <section class="cartao resultado oculto" id="resultadoMemoria" aria-live="polite"></section>

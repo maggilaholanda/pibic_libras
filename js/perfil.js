@@ -13,6 +13,16 @@
 
     const app = window.LibrasApp;
     const dados = app.carregarProgresso();
+    const nome = document.getElementById('nomePerfil');
+    const salvarNome = document.getElementById('btnSalvarNome');
+    const feedbackNome = document.getElementById('feedbackNome');
+
+    nome.value = dados.nome || '';
+    salvarNome.addEventListener('click', function () {
+      dados.nome = nome.value.trim();
+      app.salvarProgresso(dados);
+      feedbackNome.textContent = dados.nome ? 'Nome salvo.' : 'Nome removido.';
+    });
 
     document.getElementById('perfilNivel').textContent = dados.nivel;
     document.getElementById('perfilXP').textContent = dados.xpTotal + ' XP total';

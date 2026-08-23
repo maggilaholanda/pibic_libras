@@ -12,7 +12,6 @@
     if ((document.body.dataset.page || '') !== 'memoria') return;
 
     const app = window.LibrasApp;
-    // quantidadePares now definida pelo seletor de cartas (total de cartas / 2)
     const pontosPorPar = 10;
     const xpPorPar = 5;
 
@@ -22,16 +21,18 @@
     let pontos = 0;
     let tentativas = 0;
     let paresEncontrados = 0;
+    let quantidadePares = 1;
+    let temporizadorVerificacao = null;
 
     const tabuleiro = document.getElementById('tabuleiroMemoria');
     const pontosMemoria = document.getElementById('pontosMemoria');
     const tentativasMemoria = document.getElementById('tentativasMemoria');
     const feedback = document.getElementById('feedbackMemoria');
     const resultado = document.getElementById('resultadoMemoria');
-    const btnReiniciar = document.getElementById('btnReiniciarMemoria');
+    const btnReiniciarTopo = document.getElementById('btnReiniciarMemoriaTopo');
     const seletorCartas = document.getElementById('seletorCartas');
 
-    btnReiniciar.addEventListener('click', novoJogo);
+    btnReiniciarTopo.addEventListener('click', novoJogo);
     seletorCartas?.addEventListener('change', novoJogo);
 
     // iniciar com valor padrão do seletor
@@ -39,8 +40,13 @@
 
     function novoJogo() {
       const totalCartas = seletorCartas ? parseInt(seletorCartas.value, 10) : 6;
-      const quantidadePares = Math.max(1, Math.min(26, Math.floor(totalCartas / 2)));
+      quantidadePares = Math.max(1, Math.min(26, Math.floor(totalCartas / 2)));
       const letrasEscolhidas = app.embaralhar(app.letras).slice(0, quantidadePares);
+
+      if (temporizadorVerificacao) {
+        clearTimeout(temporizadorVerificacao);
+        temporizadorVerificacao = null;
+      }
 
       cartas = [];
       viradas = [];
@@ -147,7 +153,8 @@
       const segunda = cartas[viradas[1]];
       const formouPar = primeira.letra === segunda.letra && primeira.tipo !== segunda.tipo;
 
-      setTimeout(function () {
+      temporizadorVerificacao = setTimeout(function () {
+        temporizadorVerificacao = null;
         if (formouPar) {
           primeira.encontrada = true;
           segunda.encontrada = true;
@@ -205,7 +212,6 @@
         <p><strong>Tentativas:</strong> ${tentativas}</p>
         <div class="linha-botoes centralizada">
           <button class="botao primario" id="jogarNovamente" type="button">Jogar novamente</button>
-          <a class="botao neutro" href="../index.html">Voltar ao menu</a>
         </div>
       `;
 
