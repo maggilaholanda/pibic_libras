@@ -23,10 +23,13 @@
     let paresEncontrados = 0;
     let quantidadePares = 1;
     let temporizadorVerificacao = null;
+    let intervaloCronometro = null;
+    let segundos = 0;
 
     const tabuleiro = document.getElementById('tabuleiroMemoria');
     const pontosMemoria = document.getElementById('pontosMemoria');
     const tentativasMemoria = document.getElementById('tentativasMemoria');
+    const tempoMemoria = document.getElementById('tempoMemoria');
     const feedback = document.getElementById('feedbackMemoria');
     const resultado = document.getElementById('resultadoMemoria');
     const btnReiniciarTopo = document.getElementById('btnReiniciarMemoriaTopo');
@@ -48,6 +51,10 @@
         temporizadorVerificacao = null;
       }
 
+      pararCronometro();
+      segundos = 0;
+      atualizarCronometro();
+
       cartas = [];
       viradas = [];
       bloqueado = false;
@@ -64,12 +71,46 @@
       });
 
       cartas = app.embaralhar(cartas);
+      tabuleiro.style.setProperty('--colunas-tabuleiro', calcularColunas(cartas.length));
       atualizarPainel();
       desenharTabuleiro();
     }
 
+    function calcularColunas(totalCartas) {
+      const colunasPorQuantidade = {
+        6: 3,
+        8: 4,
+        10: 5,
+        12: 4,
+        14: 7,
+        16: 4,
+        18: 6,
+        20: 5,
+        22: 6,
+        24: 6,
+        26: 7,
+        28: 7,
+        30: 6,
+        32: 8,
+        34: 7,
+        36: 6,
+        38: 7,
+        40: 8,
+        42: 7,
+        44: 8,
+        46: 8,
+        48: 8,
+        50: 8,
+        52: 8
+      };
+
+      return colunasPorQuantidade[totalCartas] || 6;
+    }
+
     function desenharTabuleiro() {
       tabuleiro.innerHTML = '';
+      tabuleiro.classList.toggle('tabuleiro-grande', cartas.length >= 24);
+      tabuleiro.classList.toggle('tabuleiro-muito-grande', cartas.length >= 40);
 
       cartas.forEach(function (carta, indice) {
         const botao = document.createElement('button');
@@ -118,6 +159,7 @@
 
       carta.virada = true;
       viradas.push(indice);
+      if (viradas.length === 1) iniciarCronometro();
       desenharTabuleiro();
 
       if (viradas.length === 2) {
@@ -195,7 +237,28 @@
       tentativasMemoria.textContent = 'Tentativas: ' + tentativas;
     }
 
+    function iniciarCronometro() {
+      if (intervaloCronometro) return;
+      intervaloCronometro = setInterval(function () {
+        segundos += 1;
+        atualizarCronometro();
+      }, 1000);
+    }
+
+    function pararCronometro() {
+      if (!intervaloCronometro) return;
+      clearInterval(intervaloCronometro);
+      intervaloCronometro = null;
+    }
+
+    function atualizarCronometro() {
+      const minutos = String(Math.floor(segundos / 60)).padStart(2, '0');
+      const restantes = String(segundos % 60).padStart(2, '0');
+      tempoMemoria.textContent = 'Tempo: ' + minutos + ':' + restantes;
+    }
+
     function finalizarJogo() {
+      pararCronometro();
       const dados = app.carregarProgresso();
 
       dados.jogosMemoriaConcluidos += 1;

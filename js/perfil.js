@@ -31,6 +31,22 @@
     document.getElementById('perfilQuizzes').textContent = dados.quizzesConcluidos;
     document.getElementById('perfilMemorias').textContent = dados.jogosMemoriaConcluidos;
     document.getElementById('perfilProgresso').textContent = app.calcularProgressoGeral() + '%';
+    const letrasVistas = Array.isArray(dados.alfabetoVisto) ? dados.alfabetoVisto.length : 0;
+    document.getElementById('perfilAlfabeto').textContent = letrasVistas + '/26 letras visualizadas';
+    document.getElementById('perfilMelhorQuiz').textContent = (dados.melhorQuizPercentual || 0) + '%';
+    document.getElementById('perfilTotalQuizzes').textContent = dados.quizzesConcluidos;
+    document.getElementById('perfilTotalMemorias').textContent = dados.jogosMemoriaConcluidos;
+    document.getElementById('perfilMelhorMemoria').textContent = (dados.melhorMemoriaPontuacao || 0) + ' pontos';
+    document.getElementById('perfilXPTotal').textContent = dados.xpTotal + ' XP';
+    const mensagem = document.getElementById('mensagemProgresso');
+
+    if (letrasVistas < 26) {
+      mensagem.textContent = 'Faltam ' + (26 - letrasVistas) + ' letras para você completar o alfabeto.';
+    } else if (!dados.quizzesConcluidos) {
+      mensagem.textContent = 'Você já viu todo o alfabeto. Que tal testar seus conhecimentos no Quiz?';
+    } else {
+      mensagem.textContent = 'Você já pode continuar praticando no Quiz ou no jogo da Memória.';
+    }
 
     // Não exibe mais imagem de XP a partir de arquivo externo.
     mostrarConquistas(app);

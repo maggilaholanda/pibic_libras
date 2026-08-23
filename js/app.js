@@ -37,6 +37,7 @@
       jogosMemoriaConcluidos: 0,
       ultimoQuizPontuacao: 0,
       melhorQuizPontuacao: 0,
+      melhorQuizPercentual: 0,
       ultimoMemoriaPontuacao: 0,
       melhorMemoriaPontuacao: 0,
       alfabetoVisto: [],

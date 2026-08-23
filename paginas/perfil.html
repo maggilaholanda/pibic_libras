@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Libras Kids - Perfil</title>
+  <title>LibrasPlay - Perfil</title>
   <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body data-page="perfil" data-base-path="../">
   <div id="cabecalho"></div>
 
-  <main class="container conteudo-principal">
+  <main class="container conteudo-principal perfil-pagina">
     <section class="pagina-titulo">
       <p class="etiqueta">Acompanhamento</p>
       <h1>Perfil do aluno</h1>
@@ -43,6 +43,24 @@
           <li><strong id="perfilProgresso">0%</strong> de progresso geral</li>
         </ul>
       </div>
+    </section>
+
+    <section class="cartao perfil-progresso">
+      <h2>Seu progresso</h2>
+      <div class="progresso-cards">
+        <article><span>Alfabeto</span><strong id="perfilAlfabeto">0/26 letras visualizadas</strong></article>
+        <article><span>Melhor resultado no Quiz</span><strong id="perfilMelhorQuiz">0%</strong></article>
+        <article><span>Quizzes concluídos</span><strong id="perfilTotalQuizzes">0</strong></article>
+        <article><span>Jogos da memória concluídos</span><strong id="perfilTotalMemorias">0</strong></article>
+        <article><span>Melhor resultado na memória</span><strong id="perfilMelhorMemoria">0 pontos</strong></article>
+        <article><span>XP total</span><strong id="perfilXPTotal">0 XP</strong></article>
+      </div>
+    </section>
+
+    <section class="cartao continue-aprendendo">
+      <span class="atencao-icone" aria-hidden="true">👀</span>
+      <h2>Continue aprendendo</h2>
+      <p id="mensagemProgresso">Você já pode testar o que aprendeu no seu primeiro Quiz.</p>
     </section>
 
     <section class="cartao">

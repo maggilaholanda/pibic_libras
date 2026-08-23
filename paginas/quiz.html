@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Libras Kids - Quiz</title>
+  <title>LibrasPlay - Quiz</title>
   <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body data-page="quiz" data-base-path="../">
@@ -20,7 +20,28 @@
       </div>
     </section>
 
-    <section class="cartao modulo-centralizado" id="quizArea">
+    <section class="cartao quiz-configuracao" id="configuracaoQuiz">
+      <h2>Configure seu Quiz</h2>
+      <div class="config-grid">
+        <label for="dificuldadeQuiz">Dificuldade
+          <select id="dificuldadeQuiz">
+            <option value="facil">Fácil - 5 perguntas</option>
+            <option value="medio" selected>Médio - 10 perguntas</option>
+            <option value="dificil">Difícil - 20 perguntas</option>
+          </select>
+        </label>
+        <label for="modalidadeQuiz">Modalidade
+          <select id="modalidadeQuiz">
+            <option value="iniciante">Iniciante - sinal para letra</option>
+            <option value="intermediario">Intermediário - letra para sinal</option>
+            <option value="misto">Misto</option>
+          </select>
+        </label>
+      </div>
+      <button class="botao primario" id="btnIniciarQuiz" type="button">Iniciar Quiz</button>
+    </section>
+
+    <section class="cartao modulo-centralizado oculto" id="quizArea">
       <div class="topo-modulo">
         <span id="contadorPergunta">Pergunta 1 de 10</span>
         <span id="placarQuiz">Acertos: 0</span>

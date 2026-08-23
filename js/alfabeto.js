@@ -36,8 +36,12 @@
     });
 
     btnReiniciar.addEventListener('click', function () {
+      const dados = app.carregarProgresso();
+
       indiceAtual = 0;
-      mostrarLetra(indiceAtual);
+      dados.alfabetoVisto = [];
+      app.salvarProgresso(dados);
+      mostrarLetra(indiceAtual, false);
     });
 
     function montarGradeLetras() {
@@ -59,7 +63,7 @@
       });
     }
 
-    function mostrarLetra(indice) {
+    function mostrarLetra(indice, registrar = true) {
       const letra = letras[indice];
 
       letraAtual.textContent = 'Letra ' + letra;
@@ -72,7 +76,9 @@
         )
       );
 
-      salvarLetraVisualizada(letra);
+      if (registrar) {
+        salvarLetraVisualizada(letra);
+      }
       atualizarGrade(letra);
     }
 
